@@ -1,0 +1,75 @@
+/* Reset + lock to viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title at top, centered */
+header {
+  flex: 0 0 auto;
+  padding: 4px 0;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: palevioletred;
+}
+
+/* Main area fills rest of screen */
+main {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  box-sizing: border-box;
+  min-height: 0;
+}
+
+/* Content container */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-height: 100%;
+  max-width: 100%;
+  justify-content: center;
+}
+
+/* Top & bottom text */
+.top-text,
+.bottom-text {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Style only the numbers inside it */
+.top-text span,
+.bottom-text span {
+  color: palevioletred;
+  font-size: 1.1rem;
+}
+
+/* Responsive image */
+#gallery img {
+  max-width: 80vw;   /* ~80% of viewport width */
+  max-height: 60vh;  /* smaller so text fits above/below */
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 600px), (max-height: 750px) {
+  html, body { overflow: auto; }  /* allow scrolling only when space is tight */
+}
